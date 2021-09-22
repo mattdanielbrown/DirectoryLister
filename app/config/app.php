@@ -122,11 +122,18 @@ return [
     ],
 
     /**
-     * Whether or not to hide application files/directories form the listing.
+     * Whether or not to hide application files/directories from the listing.
      *
      * Default value: true
      */
     'hide_app_files' => DI\env('HIDE_APP_FILES', true),
+
+    /**
+     * Whether or not to hide dot files/directories from the listing.
+     *
+     * Default value: true
+     */
+    'hide_dot_files' => DI\env('HIDE_DOT_FILES', true),
 
     /**
      * Hide the files Version Control System (i.e. Git and Mercurial) use to

@@ -4,7 +4,6 @@ use App\Factories;
 use App\Middlewares;
 use App\SortMethods;
 use App\ViewFunctions;
-use Psr\Container\ContainerInterface;
 
 return [
     /** Path definitions */
@@ -18,14 +17,15 @@ return [
     'views_path' => DI\string('{app_path}/views'),
 
     /** Array of application files (to be hidden) */
-    'app_files' => ['app', 'index.php', '.hidden'],
+    'app_files' => ['app', 'index.php', '.env', '.env.example', '.hidden'],
 
     /** Array of application middlewares */
-    'middlewares' => function (ContainerInterface $container): array {
+    'middlewares' => function (): array {
         return [
-            Middlewares\CacheMiddleware::class,
-            Middlewares\ThemeMiddleware::class,
             Middlewares\WhoopsMiddleware::class,
+            Middlewares\PruneCacheMiddleware::class,
+            Middlewares\CacheControlMiddleware::class,
+            Middlewares\RegisterGlobalsMiddleware::class,
         ];
     },
 
