@@ -1,6 +1,6 @@
 # --------- BUILD ----------
 
-FROM php:8.5-apache as build
+FROM php:8.5.3RC1-apache as build
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 ENV HOME="/tmp"
@@ -28,7 +28,7 @@ RUN npm install --no-save && npm run build && npm prune --production
 
 # --------- FINAL ----------
 
-FROM php:8.5-apache
+FROM php:8.5.3RC1-apache
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 EXPOSE 80
