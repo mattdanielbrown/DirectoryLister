@@ -66,6 +66,15 @@ Configuration
 
 See the [Configuration Documentation](https://docs.directorylister.com/configuration) for more information.
 
+Warnings
+--------
+
+> [!WARNING]
+> **DO NOT USE DIRECTORY LISTER TO HOST PRIVATE OR SENSITIVE FILES!**
+>
+> Directory Lister is designed for public file sharing only. Files within the
+> configured files path (including hidden files) will be publicly accessible.
+
 Sponsors
 --------
 
